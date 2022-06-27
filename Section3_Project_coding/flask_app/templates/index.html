@@ -1,0 +1,92 @@
+<!-- <center>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShyrXYvSjLvpBL5HT5bPB-JXNa7ExZfpPB-Q&usqp=CAU" height = 400 />
+    <form method = "POST">
+        <label>Input1</label>
+        <input name="text">
+        <input type="submit">
+    </form>
+</center> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>설문조사 데이터를 통한 머신러닝 기반 당뇨병 진단 예측</title>
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- Navbar -->
+    <!-- <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav> -->
+</head>
+<body>
+    
+    <div class="login">
+        <h2>
+          <div style="text-align:center">당뇨병 예측!</div>
+        </h2>
+            <p><div style="text-align:center">특성값 입력:</div></p>
+            <p><div style="text-align:center">고혈압 여부 :  8시간 이상 공복 후 측정한 혈당이 126 mg/dL 이상인 경우는 1, 그 외는 0 선택</div></p>
+            <p><div style="text-align:center">고 콜레스테롤 여부 :  콜레스테롤 수치가 200㎎/㎗ 미만인 경우 0, 그 외는 1 선택</div></p>
+            <p><div style="text-align:center">건강상태척도(주관) : 1 = 우수, 2 = 매우 양호, 3 = 양호, 4 = 보통, 5 = 나쁨</div></p>
+            <form action="{{url_for('predict')}}" method="POST">
+              <div style="text-align:center">
+                <input type="number" name="HighBP" placeholder="고혈압 여부(0 또는 1 입력)" required="required" style="width:500px;height:25px;font-size:20px;">
+                <br>
+                <br>
+                <input type="number" name="HighChol" placeholder="고 콜레스테롤 여부(0 또는 1 입력)" required="required" style="width:500px;height:25px;font-size:20px;">
+                <br>
+                <br>
+                <input type="number" name="GenHlth" placeholder="건강상태척도(1, 2, 3, 4, 5 중 입력)" required="required" style="width:500px;height:25px;font-size:20px;">
+                <br>
+                <br>
+                <button type="submit" class="btn btn-primary btn-block btn-large">예측!</button>
+              </div>
+
+            
+            </form>
+            
+            <br>
+            <br>
+        <b><div style="text-align:center">{{prediction_text}}</div></b>
+    </div>
+
+
+
+</body>
+</html>
