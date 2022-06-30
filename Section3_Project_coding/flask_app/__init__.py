@@ -25,6 +25,10 @@ def create_app():
 
         return render_template('index.html', prediction_text = output)
     
+    @app.route('/dashboard')
+    def dashboard():
+        return render_template('dashboard.html')
+    
     return app
 
 if __name__ == "__main__":

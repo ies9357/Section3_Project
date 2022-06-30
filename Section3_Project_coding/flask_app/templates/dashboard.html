@@ -1,12 +1,3 @@
-<!-- <center>
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShyrXYvSjLvpBL5HT5bPB-JXNa7ExZfpPB-Q&usqp=CAU" height = 400 />
-    <form method = "POST">
-        <label>Input1</label>
-        <input name="text">
-        <input type="submit">
-    </form>
-</center> -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,36 +47,13 @@
 </head>
 <body>
     
-    <div class="login">
-        <h2>
-          <div style="text-align:center">당뇨병 예측!</div>
-        </h2>
-            <p><div style="text-align:center">특성값 입력:</div></p>
-            <p><div style="text-align:center">고혈압 여부 :  8시간 이상 공복 후 측정한 혈당이 126 mg/dL 이상인 경우는 1, 그 외는 0 선택</div></p>
-            <p><div style="text-align:center">고 콜레스테롤 여부 :  콜레스테롤 수치가 200㎎/㎗ 미만인 경우 0, 그 외는 1 선택</div></p>
-            <p><div style="text-align:center">건강상태척도(주관) : 1 = 우수, 2 = 매우 양호, 3 = 양호, 4 = 보통, 5 = 나쁨</div></p>
-            <form action="{{url_for('predict')}}" method="POST">
-              <div style="text-align:center">
-                <input type="number" name="HighBP" placeholder="고혈압 여부(0 또는 1 입력)" required="required" style="width:500px;height:25px;font-size:20px;">
-                <br>
-                <br>
-                <input type="number" name="HighChol" placeholder="고 콜레스테롤 여부(0 또는 1 입력)" required="required" style="width:500px;height:25px;font-size:20px;">
-                <br>
-                <br>
-                <input type="number" name="GenHlth" placeholder="건강상태척도(1, 2, 3, 4, 5 중 입력)" required="required" style="width:500px;height:25px;font-size:20px;">
-                <br>
-                <br>
-                <button type="submit" class="btn btn-primary btn-block btn-large">예측!</button>
-              </div>
+   
 
-            
-            </form>
-            
-            <br>
-            <br>
-        <b><div style="text-align:center">{{prediction_text}}</div></b>
-    </div>
-
+    <main>
+        <div class="iframebox"> 
+          <iframe width="1400" height="3000" src="http://127.0.0.1:3000/public/dashboard/7f4fd110-197a-4020-8483-7bf6355be3b8" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+    </main>
 
 
 </body>
